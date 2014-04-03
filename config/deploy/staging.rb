@@ -1,11 +1,7 @@
-set :rvm_type, :user
-set(:port, 30002)
-set :application, "rcc.51shepherd.com"
+set(:port, 30000)
+set :application, "115.28.244.240"
 server application, :app, :web, :db, :primary=>true
-set(:user, "programmer")
-set :deploy_to, "/home/#{user}/public_html/#{application}"
+set(:user, "shepherd")
+set :deploy_to, "/home/#{user}/public_html/staging.rccxm.com"
 set(:rails_env, "qa")
-set :rvm_ruby_string, '1.9.3'
-
-require 'capistrano/gitflow'
-
+set :rvm_ruby_string, '1.9.3-545'

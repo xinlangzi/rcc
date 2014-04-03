@@ -10,7 +10,7 @@ when 'production'
   base_path = '/home/shepherd/public_html/www.rccxm.com'
   worker_processes 2
 else
-  base_path = '/home/programmer/public_html/rcc.51shepherd.com'
+  base_path = '/home/shepherd/public_html/staging.rccxm.com'
   worker_processes 2
 end
 
