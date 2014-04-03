@@ -1,0 +1,25 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    ads:
+      title: Ads
+  admin:
+    ads:
+      actions:
+        create_new: Add New Ad
+        reorder: Reorder Ads
+        reorder_done: Done Reordering Ads
+      records:
+        title: Ads
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Ads yet. Click "Add New Ad" to add your first ad.
+      ad:
+        view_live_html: View this ad live <br/><em>(opens in a new window)</em>
+        edit: Edit this ad
+        delete: Remove this ad forever
+  ads:
+    show:
+      other: Other Ads

@@ -1,0 +1,6 @@
+<script type="text/javascript" charset="utf-8">
+  if($('#slideImages img').length>0){
+    $('#slideImages').cycle({fx: 'scrollRight', speed: <%=RefinerySetting.find_or_set(:slide_speed, 5000)%>});
+  }
+</script>
+

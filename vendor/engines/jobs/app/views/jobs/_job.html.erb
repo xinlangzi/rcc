@@ -1,0 +1,4 @@
+<li>
+  <%= link_to truncate(job.title, :length => RefinerySetting.find_or_set(:job_title_length, 23)), job_path(job), :title=>job.title %>
+</li>
+

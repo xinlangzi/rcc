@@ -1,0 +1,44 @@
+---
+nb:
+  plugins:
+    topics:
+      title: Topics
+    articles:
+      title: Articles
+  admin:
+    topics:
+      actions:
+        create_new: Lag en ny Topic
+        reorder: Endre rekkefølgen på Topics
+        reorder_done: Ferdig å endre rekkefølgen Topics
+      records:
+        title: Topics
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Topics enda. Klikk på "Lag en ny Topic" for å legge
+          til din første topic.
+      topic:
+        view_live_html: Vis hvordan denne topic ser ut offentlig <br/><em>(åpner i
+          et nytt vindu)</em>
+        edit: Rediger denne topic
+        delete: Fjern denne topic permanent
+    articles:
+      actions:
+        create_new: Lag en ny Article
+        reorder: Endre rekkefølgen på Articles
+        reorder_done: Ferdig å endre rekkefølgen Articles
+      records:
+        title: Articles
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Articles enda. Klikk på "Lag en ny Article" for
+          å legge til din første article.
+      article:
+        view_live_html: Vis hvordan denne article ser ut offentlig <br/><em>(åpner
+          i et nytt vindu)</em>
+        edit: Rediger denne article
+        delete: Fjern denne article permanent
+  topics:
+    show:
+      other: Andre Topics
+  articles:
+    show:
+      other: Andre Articles

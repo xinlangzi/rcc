@@ -1,0 +1,25 @@
+<%=content_for :left do %>
+	<div class="art-sidebar2">
+    <div class="art-Block">
+      <div class="art-Block-tl"></div>
+      <div class="art-Block-tr"></div>
+      <div class="art-Block-bl"></div>
+      <div class="art-Block-br"></div>
+      <div class="art-Block-tc"></div>
+      <div class="art-Block-bc"></div>
+      <div class="art-Block-cl"></div>
+      <div class="art-Block-cr"></div>
+      <div class="art-Block-cc"></div>
+      <div class="art-Block-body">
+        <%=render 'shared/jobs'%>
+      </div>
+    </div>
+  </div>
+<%end%>
+<%=content_for :content do %>
+	<div class='job'>
+		<div class='title'><%=raw @job.title %></div>
+		<div class='attachment'><%= link_to 'attachment', @job.attachment.url if @job.attachment%></div>
+		<div class='description'><%=raw @job.description %></div>
+	</div>
+<%end%>

@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    ads:
+      title: Ads
+  admin:
+    ads:
+      actions:
+        create_new: Maak een nieuwe Ad
+        reorder: Wijzig de volgorde van de Ads
+        reorder_done: Klaar met het wijzingen van de volgorde van de Ads
+      records:
+        title: Ads
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Ads. Druk op 'Maak een nieuwe Ad' om de eerste aan te maken.
+      ad:
+        view_live_html: Bekijk deze ad op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze ad
+        delete: Verwijder deze ad voor eeuwig
+  ads:
+    show:
+      other: Andere Ads

@@ -1,0 +1,24 @@
+<% topic_titles = RefinerySetting.find_or_set(:home_page_topics, []) %>
+<% topic_titles.each do |topic_title| %>
+	<% topic = Topic.by_title(topic_title).first %>	
+			<div class="art-BlockHeader">
+					<div class="l"></div>
+					<div class="r"></div>
+					<div class="art-header-tag-icon">
+							<div class="t"><%=topic.title%></div>
+					</div>
+			</div>
+			<div class="art-BlockContent">
+				<div class="art-BlockContent-body">
+					<div>
+						<ul>								
+							<%topic.articles.each do |a|%>
+								<% cur = 'cur' if a==@article%>
+								<li><%=link_to a, a, :class=>cur%></li>
+							<%end%>
+						</ul>
+					</div>					
+				</div>
+			</div>
+			<div class="cleared"></div>
+<% end %>

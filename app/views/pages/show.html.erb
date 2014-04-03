@@ -1,0 +1,60 @@
+<%#= render :partial => "/shared/content_page" %>
+<% root = @page.root	%>
+<%=content_for :left do %>
+  <div class="art-sidebar2">
+    <div class="art-Block">
+      <div class="art-Block-tl"></div>
+      <div class="art-Block-tr"></div>
+      <div class="art-Block-bl"></div>
+      <div class="art-Block-br"></div>
+      <div class="art-Block-tc"></div>
+      <div class="art-Block-bc"></div>
+      <div class="art-Block-cl"></div>
+      <div class="art-Block-cr"></div>
+      <div class="art-Block-cc"></div>
+      <div class="art-Block-body">				
+				<div class="art-BlockHeader">
+					<div class="l"></div>
+					<div class="r"></div>
+					<div class="art-header-tag-icon">
+							<% cur ='cur' if @page == root%>
+							<div class="t"><%=link_to root.title, root.url, :class=>cur%></div>
+					</div>
+				</div>
+				<div class="art-BlockContent">
+					<div class="art-BlockContent-body">
+						<div>
+							<ul>
+								<%=render :partial=>'tree', :object => root%>
+							</ul>
+						</div>					
+						<div class="cleared"></div>
+					</div>
+				</div>
+				<div class="cleared"></div>				
+      </div>
+    </div>
+  </div>
+<%end%>
+
+<%=content_for :content do %>
+  <% unless @page.content_for(:image_panel).blank? %>
+    <div class="art-Post">
+      <div class="art-Post-body" style="width:100%;height:250px;margin-top:6px;">
+        <div class="art-Post-inner" id='slideImages'>
+          <%=raw @page.content_for(:image_panel) %>
+        </div>
+      </div>
+    </div>
+  <%end%>
+  <div class="art-Post">
+    <div class="art-Post-body">
+      <div class="art-Post-inner">
+				<div class='page-header'><%=@page.title%></div>
+        <%=raw @page.content_for(:content) %>        
+      </div>
+    </div>
+  </div>
+  <br/><br/>
+<%end%>
+

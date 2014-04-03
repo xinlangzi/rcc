@@ -1,0 +1,45 @@
+---
+zh-CN:
+  shared:
+    admin:
+      image_picker:
+        image: 图片
+  plugins:
+    topics:
+      title: 主题
+    articles:
+      title: 文章
+  admin:
+    topics:
+      actions:
+        create_new: 添加新主题
+        reorder: 重新编排顺序
+        reorder_done: 完比编排
+      records:
+        title: 主题
+        sorry_no_results: 对不起，无法查询到你要的信息。
+        no_items_yet: 还没有任何主题，请点击 "添加新主题" 来添加一个吧。
+      topic:
+        view_live_html: 在线查看主题 <br/><em>（在新窗口打开）</em>
+        edit: 编辑此主题
+        delete: 永久删除此职位
+    articles:
+      actions:
+        create_new: 添加新文章
+        reorder: 重新编排顺序
+        reorder_done: 完成编排
+      records:
+        title: 文章
+        sorry_no_results: 对不起，无法查询到你要的信息。
+        no_items_yet: 还没有任何文章，点击 "添加新文章" 来添加一个吧。
+      article:
+        view_live_html: 在线查看文章 <br/><em>（在新窗口打开）</em>
+        edit: 编辑此文章
+        delete: 永久删除此文章
+  topics:
+    show:
+      other: 其他主题
+  articles:
+    show:
+      other: 其他文章
+

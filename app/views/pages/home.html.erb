@@ -1,0 +1,56 @@
+<%#= render :partial => "/shared/content_page" %>
+<%=content_for :left do %>
+  <div class="art-sidebar2">
+    <div class="art-Block">
+      <div class="art-Block-tl"></div>
+      <div class="art-Block-tr"></div>
+      <div class="art-Block-bl"></div>
+      <div class="art-Block-br"></div>
+      <div class="art-Block-tc"></div>
+      <div class="art-Block-bc"></div>
+      <div class="art-Block-cl"></div>
+      <div class="art-Block-cr"></div>
+      <div class="art-Block-cc"></div>
+      <div class="art-Block-body">
+        <%=render 'shared/jobs'%>
+      </div>
+    </div>
+  </div>
+  <div class="art-sidebar2">
+    <div class="art-Block">
+      <div class="art-Block-tl"></div>
+      <div class="art-Block-tr"></div>
+      <div class="art-Block-bl"></div>
+      <div class="art-Block-br"></div>
+      <div class="art-Block-tc"></div>
+      <div class="art-Block-bc"></div>
+      <div class="art-Block-cl"></div>
+      <div class="art-Block-cr"></div>
+      <div class="art-Block-cc"></div>
+      <div class="art-Block-body">
+				<%=render :partial=>"shared/ads"%>
+      </div>
+    </div>
+  </div>
+<%end%>
+<%=content_for :content do %>
+  <div class="art-Post">
+    <div class="art-Post-body" style="width:100%;height:250px;margin-top:6px;">
+      <div class="art-Post-inner" id='slideImages'>
+        <%=raw @page.content_for(:image_panel) %>
+      </div>     
+    </div>
+  </div>
+	<br/><hr/><br/>
+  <div class="art-Post">
+    <div class="art-Post-body">
+      <div class="art-Post-inner">
+        <% topic_titles = RefinerySetting.find_or_set(:home_page_topics, []) %>
+        <% topic_titles.each do |topic_title| %>
+          <%= render :partial => 'topics/show', :locals => {:topic_title => topic_title} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<%end%>
+

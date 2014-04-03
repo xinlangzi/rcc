@@ -1,0 +1,9 @@
+<div class='job'>
+  <div class='ltitle'><%=@topic.title%></div>
+  <ul class="all_jobs">
+    <% @topic.articles.each do |a| %>
+        <li><%=link_to a, a %></l>
+    <% end %>
+  </ul>
+</div>
+

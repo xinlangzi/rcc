@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    ads:
+      title: Ads
+  admin:
+    ads:
+      actions:
+        create_new: Lag en ny Ad
+        reorder: Endre rekkefølgen på Ads
+        reorder_done: Ferdig å endre rekkefølgen Ads
+      records:
+        title: Ads
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Ads enda. Klikk på "Lag en ny Ad" for å legge til din første ad.
+      ad:
+        view_live_html: Vis hvordan denne ad ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne ad
+        delete: Fjern denne ad permanent
+  ads:
+    show:
+      other: Andre Ads

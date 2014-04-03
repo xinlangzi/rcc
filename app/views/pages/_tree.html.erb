@@ -1,0 +1,12 @@
+<% tree.children.each do |item|%>
+	<li>
+		<% cur ='cur' if @page == item%>
+		<%=link_to item.title, item.url, :class=>cur%>
+		<% unless item.children.empty?%>
+			<ul>
+				<%=render :partial=>'tree', :object => item%>
+			</ul>
+		<% end %>
+		
+	</li>
+<%end%>

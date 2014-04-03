@@ -1,0 +1,9 @@
+<div id="ads">
+	<center>
+  <% Ad.list(limit).each do |ad| %>
+  <a href="<%= ad.link %>">
+    <img src= "<%= ad.image.url %>" />
+  </a>
+  <% end %>
+  </center>
+</div>

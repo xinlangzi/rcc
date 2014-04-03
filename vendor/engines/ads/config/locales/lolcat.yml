@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    ads:
+      title: Ads
+  admin:
+    ads:
+      actions:
+        create_new: CREATE NEW Ad
+        reorder: REORDR Ads
+        reorder_done: DUN REORDERIN Ads
+      records:
+        title: Ads
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Ads YET. CLICK "CREATE NEW Ad" 2 ADD UR FURST ad.
+      ad:
+        view_live_html: VIEW DIS ad LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS ad
+        delete: REMOOV DIS ad FOREVR
+  ads:
+    show:
+      other: OTHR Ads

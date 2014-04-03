@@ -1,0 +1,36 @@
+<% topic = Topic.by_title(topic_title).first %>
+<div class="art-Block" style="width:30%;float:left;min-height:180px;">
+  <div class="art-Block-tl"></div>
+  <div class="art-Block-tr"></div>
+  <div class="art-Block-bl"></div>
+  <div class="art-Block-br"></div>
+  <div class="art-Block-tc"></div>
+  <div class="art-Block-bc"></div>
+  <div class="art-Block-cl"></div>
+  <div class="art-Block-cr"></div>
+  <div class="art-Block-cc"></div>
+  <div class="art-Block-body">
+    <div class="art-BlockHeader">
+        <div class="l"></div>
+        <div class="r"></div>
+        <div class="art-header-tag-icon">
+            <div class="t"><%=topic.title%></div>
+        </div>
+    </div>
+    <% limit = RefinerySetting.find_or_set(:artiles_list_limit, 10) %>
+    <div class="art-BlockContent">
+        <div class="art-BlockContent-body">
+            <div>
+              <ul class="articles">
+                <% topic.articles.list(limit).each do |a| %>
+                  <li><%=link_to a, a %></l>
+                <%end%>
+              </ul>
+            </div>
+    		<div class="cleared"></div>
+        </div>
+    </div>
+	<div class="cleared"></div>
+  </div>
+</div>
+

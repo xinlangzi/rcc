@@ -1,0 +1,2 @@
+<% limit = RefinerySetting.find_or_set(:ads_list_limit, 1) %>
+<%= render :partial => 'ads/index', :locals => {:limit => limit}%>
