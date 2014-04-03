@@ -11,7 +11,7 @@ require 'rvm/capistrano'
 set :stages, %w(staging production)
 set :default_stage, 'staging'
 
-set :repository, 'ssh://gitolite@51shepherd.com:30000/rcc'
+set :repository, 'git@github.com:xinlangzi/rcc.git'
 set :scm, :git
 set :scm_verbose, true
 set :checkout, 'export'
