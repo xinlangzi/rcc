@@ -11,7 +11,7 @@ source 'http://ruby.taobao.org/'
 gem 'pg'
 gem 'foreigner'
 gem 'jquery-rails'
-gem 'unicorn'
+gem 'passenger'
 
 group :development do
   gem 'capistrano'

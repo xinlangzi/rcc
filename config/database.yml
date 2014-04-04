@@ -45,10 +45,10 @@ test:
 staging:
   adapter: postgresql
   encoding: unicode
-  database: rcc_qa
+  database: rcc_staging
   pool: 5
-  username: qa
-  password: 123456
+  username: rcc
+  password: xrccm
 
 production:
   adapter: postgresql

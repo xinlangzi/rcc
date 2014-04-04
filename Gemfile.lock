@@ -75,6 +75,7 @@ GEM
       capybara (>= 1.1.1)
       cucumber (>= 1.0.6)
       nokogiri (>= 1.5.0)
+    daemon_controller (1.2.0)
     database_cleaner (0.6.7)
     devise (1.4.9)
       bcrypt-ruby (~> 3.0)
@@ -108,7 +109,6 @@ GEM
       thor (~> 0.14)
     json (1.6.1)
     json_pure (1.6.1)
-    kgio (2.7.4)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     mail (2.2.19)
@@ -127,6 +127,10 @@ GEM
       net-ssh (>= 1.99.1)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
+    passenger (4.0.40)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     pg (0.11.0)
     polyglot (0.3.3)
     pry (0.9.9.6)
@@ -156,7 +160,6 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
-    raindrops (0.9.0)
     rake (0.9.2.2)
     rdoc (3.11)
       json (~> 1.4)
@@ -260,10 +263,6 @@ GEM
       polyglot (>= 0.3.1)
     truncate_html (0.5.1)
     tzinfo (0.3.31)
-    unicorn (4.3.1)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     warden (1.0.6)
       rack (>= 1.0)
     will_paginate (3.0.2)
@@ -280,6 +279,7 @@ DEPENDENCIES
   capistrano_colors
   foreigner
   jquery-rails
+  passenger
   pg
   pry-rails
   refinerycms (~> 1.0.8)
@@ -289,4 +289,3 @@ DEPENDENCIES
   refinerycms-jobs (= 1.0)!
   refinerycms-testing (~> 1.0.8)
   rvm-capistrano
-  unicorn

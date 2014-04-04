@@ -1,12 +1,7 @@
 require 'capistrano/ext/multistage'
-require 'capistrano/gitflow'
 require 'capistrano_colors'
-
-# Add RVM's lib directory to the load path.
-# $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
-
-require 'bundler/capistrano'
 require 'rvm/capistrano'
+require 'bundler/capistrano'
 
 set :stages, %w(staging production)
 set :default_stage, 'staging'
@@ -16,34 +11,34 @@ set :scm, :git
 set :scm_verbose, true
 set :checkout, 'export'
 set :deploy_via, :remote_cache
-
 set :use_sudo, false
-
 set :bundle_flags, '--deployment --quiet --binstubs'
 set :bundle_without, [:test, :development]
-
-ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 
-after 'deploy:update_code', 'deploy:symlink_sockets'
-
-namespace :deploy do
-  task :start, :roles => :app do
-    run "cd #{current_path} && BUNDLE_GEMFILE=#{current_path}/Gemfile bundle exec unicorn_rails -c config/unicorn.rb -E #{rails_env} -D"
-  end
-
-  task :stop,  :roles => :app do
-    run "kill -s QUIT `cat #{shared_path}/pids/unicorn.pid`"
-  end
-
-  task :restart, :roles => :app do
-    run "kill -s USR2 `cat #{shared_path}/pids/unicorn.pid`"
-  end
-
-  task :symlink_sockets, :roles => :app do
-    run "mkdir -p #{shared_path}/sockets"
-    run "rm -rf #{latest_release}/tmp/sockets"
-    run "ln -nfs #{shared_path}/sockets #{latest_release}/tmp/sockets"
-  end
+# Bonus! Colors are pretty!
+def red(str)
+  "\e[31m#{str}\e[0m"
 end
 
+# Figure out the name of the current local branch
+def current_git_branch
+  branch = `git symbolic-ref HEAD 2> /dev/null`.strip.gsub(/^refs\/heads\//, '')
+  puts "Deploying branch #{red branch}"
+  branch
+end
+
+set :branch, current_git_branch
+
+namespace :deploy do
+  desc "Restarting mod_rails with restart.txt"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{latest_release}/tmp/restart.txt"
+  end
+
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails"
+    task t, :roles => :app do ; end
+  end
+end
